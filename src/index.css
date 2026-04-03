@@ -1,0 +1,123 @@
+/* @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap"); */
+
+@font-face {
+  font-family: "Bombaram Regular";
+  src: url("/fonts/HSBombaram3.0_Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DNFForgedBlade";
+  font-style: normal;
+  font-weight: 300;
+  src: url("//cdn.df.nexon.com/img/common/font/DNFForgedBlade-Light.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "DNFForgedBlade";
+  font-style: normal;
+  font-weight: 500;
+  src: url("//cdn.df.nexon.com/img/common/font/DNFForgedBlade-Medium.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "DNFForgedBlade";
+  font-style: normal;
+  font-weight: 700;
+  src: url("//cdn.df.nexon.com/img/common/font/DNFForgedBlade-Bold.otf")
+    format("opentype");
+}
+
+:root {
+  --white: #ffffff;
+  --cream: #f7f8fc;
+  --blue-light: #e8f0fe;
+  --blue-mid: #4a90d9;
+  --blue: #1a5dc8;
+  --blue-dark: #0d2e6e;
+  --navy: #071840;
+  --accent: #a8c8f8;
+  --gold: #c9a84c;
+  --text: #0d1f3c;
+  --text-soft: #4a5f80;
+  --text-muted: #8fa0bc;
+  --border: rgba(26, 93, 200, 0.12);
+  --chip-bg: rgba(26, 93, 200, 0.08);
+  --chip-border: rgba(26, 93, 200, 0.18);
+}
+
+em {
+  font-style: normal;
+}
+
+body {
+  font-family: "Nunito", sans-serif; /* body text */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--white);
+  color: var(--text);
+  font-family: "Nunito", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+/* Scroll reveal — visible by default, animated when JS runs */
+.reveal,
+.reveal-left,
+.reveal-right {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.animate {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.reveal-left.animate {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+.reveal-right.animate {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.reveal.animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left.animate.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right.animate.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
