@@ -8,7 +8,7 @@ export default function Contact() {
   const t = text[lang];
   const formRef = useRef();
   const [status, setStatus] = useState(null);
-  const [vasls, setVals] = useState({ name: "", email: "", msg: "" });
+  const [vals, setVals] = useState({ name: "", email: "", msg: "" });
 
   function handleSubmit() {
     if (!vals.name || !vals.email || !vals.msg) return;
