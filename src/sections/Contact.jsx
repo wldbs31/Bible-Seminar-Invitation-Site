@@ -10,7 +10,8 @@ export default function Contact() {
   const [status, setStatus] = useState(null);
   const [vals, setVals] = useState({ name: "", email: "", msg: "" });
 
-  function handleSubmit() {
+  function handleSubmit(e) {
+    if (e) e.preventDefault();
     if (!vals.name || !vals.email || !vals.msg) return;
     setStatus("sending");
 
@@ -25,23 +26,13 @@ export default function Contact() {
         },
         import.meta.env.VITE_EMAILJS_KEY,
       )
-      .then(() => setStatus("success"))
-      .catch(() => setStatus("error"));
+      .then((res) => {
+        setStatus("success");
+      })
+      .catch((err) => {
+        setStatus("error");
+      });
   }
-
-  const inp = {
-    width: "100%",
-    background: "var(--cream)",
-    border: "1px solid var(--border)",
-    borderRadius: "12px",
-    color: "var(--text)",
-    fontFamily: "'DM Sans',sans-serif",
-    fontSize: "0.9rem",
-    padding: "13px 16px",
-    outline: "none",
-    boxSizing: "border-box",
-    transition: "border-color 0.2s, box-shadow 0.2s",
-  };
 
   return (
     <section
@@ -238,20 +229,7 @@ export default function Contact() {
                 }}
               >
                 <div>
-                  <label
-                    style={{
-                      fontFamily: "'DM Sans',sans-serif",
-                      fontSize: "0.75rem",
-                      fontWeight: 600,
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      color: "var(--text-muted)",
-                      display: "block",
-                      marginBottom: "6px",
-                    }}
-                  >
-                    {t.contactName}
-                  </label>
+                  <label style={labelFieldSt}>{t.contactName}</label>
                   <input
                     name="user_name"
                     type="text"
@@ -272,20 +250,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label
-                    style={{
-                      fontFamily: "'DM Sans',sans-serif",
-                      fontSize: "0.75rem",
-                      fontWeight: 600,
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      color: "var(--text-muted)",
-                      display: "block",
-                      marginBottom: "6px",
-                    }}
-                  >
-                    {t.contactEmail}
-                  </label>
+                  <label style={labelFieldSt}>{t.contactEmail}</label>
                   <input
                     name="user_email"
                     type="email"
@@ -310,20 +275,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label
-                    style={{
-                      fontFamily: "'DM Sans',sans-serif",
-                      fontSize: "0.75rem",
-                      fontWeight: 600,
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      color: "var(--text-muted)",
-                      display: "block",
-                      marginBottom: "6px",
-                    }}
-                  >
-                    {t.contactMsg}
-                  </label>
+                  <label style={labelFieldSt}>{t.contactMsg}</label>
                   <textarea
                     name="message"
                     placeholder={
@@ -433,6 +385,32 @@ export default function Contact() {
   );
 }
 
+/* ── Style constants (outside component so they're not recreated on render) ── */
+const inp = {
+  width: "100%",
+  background: "var(--cream)",
+  border: "1px solid var(--border)",
+  borderRadius: "12px",
+  color: "var(--text)",
+  fontFamily: "'DM Sans',sans-serif",
+  fontSize: "0.9rem",
+  padding: "13px 16px",
+  outline: "none",
+  boxSizing: "border-box",
+  transition: "border-color 0.2s, box-shadow 0.2s",
+};
+
+const labelFieldSt = {
+  fontFamily: "'DM Sans',sans-serif",
+  fontSize: "0.75rem",
+  fontWeight: 600,
+  letterSpacing: "0.1em",
+  textTransform: "uppercase",
+  color: "var(--text-muted)",
+  display: "block",
+  marginBottom: "6px",
+};
+
 const labelSt = {
   fontFamily: "'DM Sans',sans-serif",
   fontSize: "0.72rem",
@@ -442,6 +420,7 @@ const labelSt = {
   margin: "0 0 10px",
   fontWeight: 600,
 };
+
 const headSt = {
   fontFamily: "'DNFForgedBlade', 'Hahmlet', Georgia,serif",
   fontSize: "clamp(2rem,4vw,3rem)",
