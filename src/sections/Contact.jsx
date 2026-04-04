@@ -11,13 +11,19 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (!vals.name || !vals.email || !vals.msg) return;
     setStatus("sending");
+
     emailjs
-      .sendForm(
-        "service_76xr3zf",
-        "service_76xr3zf",
-        formRef.current,
-        "9voJDSjjr2tAgZ1kb",
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE,
+        import.meta.env.VITE_EMAILJS_TEMPLATE,
+        {
+          user_name: vals.name,
+          user_email: vals.email,
+          message: vals.msg,
+        },
+        import.meta.env.VITE_EMAILJS_KEY,
       )
       .then(() => setStatus("success"))
       .catch(() => setStatus("error"));
