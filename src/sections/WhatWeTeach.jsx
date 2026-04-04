@@ -175,7 +175,8 @@ export default function WhatWeTeach() {
                     <div style={{ padding: "20px 22px 22px" }}>
                       <h3
                         style={{
-                          fontFamily: "'DNFForgedBlade',Georgia,serif",
+                          fontFamily:
+                            "'DNFForgedBlade', 'Hahmlet', Georgia,serif",
                           fontSize: "1.05rem",
                           fontWeight: 400,
                           color: "var(--navy)",
@@ -241,7 +242,7 @@ export default function WhatWeTeach() {
           <div>
             <p
               style={{
-                fontFamily: "'DNFForgedBlade',Georgia,serif",
+                fontFamily: "'DNFForgedBlade', 'Hahmlet', Georgia,serif",
                 fontSize: "1.2rem",
                 color: "var(--navy)",
                 margin: "0 0 4px",
@@ -328,7 +329,7 @@ const labelSt = {
   fontWeight: 600,
 };
 const headSt = {
-  fontFamily: "'DNFForgedBlade',Georgia,serif",
+  fontFamily: "'DNFForgedBlade', 'Hahmlet', Georgia,serif",
   fontSize: "clamp(2rem,4vw,3rem)",
   fontWeight: 400,
   color: "var(--navy)",

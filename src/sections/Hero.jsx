@@ -165,7 +165,7 @@ export default function Hero() {
         {/* Headline */}
         <h1
           style={{
-            fontFamily: "'DNFForgedBlade', Georgia, serif",
+            fontFamily: "'DNFForgedBlade', 'Hahmlet', Georgia, serif",
             fontSize: "clamp(2rem, 6vw, 4.2rem)",
             fontWeight: 400,
             color: "#fff",

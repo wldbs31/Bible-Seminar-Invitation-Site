@@ -84,7 +84,7 @@ export default function Contact() {
           <div>
             <p
               style={{
-                fontFamily: "'DNFForgedBlade',Georgia,serif",
+                fontFamily: "'DNFForgedBlade', 'Hahmlet', Georgia,serif",
                 fontSize: "1.3rem",
                 color: "var(--navy)",
                 margin: "0 0 28px",
@@ -212,7 +212,7 @@ export default function Contact() {
                 </div>
                 <p
                   style={{
-                    fontFamily: "'DNFForgedBlade',Georgia,serif",
+                    fontFamily: "'DNFForgedBlade', 'Hahmlet', Georgia,serif",
                     fontSize: "1.2rem",
                     color: "var(--navy)",
                     marginBottom: "8px",
@@ -429,7 +429,7 @@ const labelSt = {
   fontWeight: 600,
 };
 const headSt = {
-  fontFamily: "'DNFForgedBlade',Georgia,serif",
+  fontFamily: "'DNFForgedBlade', 'Hahmlet', Georgia,serif",
   fontSize: "clamp(2rem,4vw,3rem)",
   fontWeight: 400,
   color: "var(--navy)",

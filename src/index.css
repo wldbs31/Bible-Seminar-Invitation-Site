@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap&family=Hahmlet:wght@100..900&display=swap");
 
 @font-face {
   font-family: "Bombaram Regular";
@@ -11,6 +11,7 @@
   font-family: "DNFForgedBlade";
   font-style: normal;
   font-weight: 300;
+  font-display: swap;
   src: url("//cdn.df.nexon.com/img/common/font/DNFForgedBlade-Light.otf")
     format("opentype");
 }
@@ -19,6 +20,7 @@
   font-family: "DNFForgedBlade";
   font-style: normal;
   font-weight: 500;
+  font-display: swap;
   src: url("//cdn.df.nexon.com/img/common/font/DNFForgedBlade-Medium.otf")
     format("opentype");
 }
@@ -27,6 +29,7 @@
   font-family: "DNFForgedBlade";
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
   src: url("//cdn.df.nexon.com/img/common/font/DNFForgedBlade-Bold.otf")
     format("opentype");
 }

@@ -203,7 +203,7 @@ const labelSt = {
   fontWeight: 600,
 };
 const headSt = {
-  fontFamily: "'DNFForgedBlade',Georgia,serif",
+  fontFamily: "'DNFForgedBlade', 'Hahmlet', Georgia,serif",
   fontSize: "clamp(2rem,4vw,3rem)",
   fontWeight: 400,
   color: "var(--navy)",
