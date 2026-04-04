@@ -8,9 +8,9 @@ export default function Contact() {
   const t = text[lang];
   const formRef = useRef();
   const [status, setStatus] = useState(null);
+  const [vasls, setVals] = useState({ name: "", email: "", msg: "" });
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit() {
     if (!vals.name || !vals.email || !vals.msg) return;
     setStatus("sending");
 
@@ -257,6 +257,8 @@ export default function Contact() {
                     type="text"
                     placeholder={lang === "en" ? "Your name" : "이름"}
                     required
+                    value={vals.name}
+                    onChange={(e) => setVals({ ...vals, name: e.target.value })}
                     style={inp}
                     onFocus={(e) => {
                       e.target.style.borderColor = "var(--blue)";
@@ -289,6 +291,10 @@ export default function Contact() {
                     type="email"
                     placeholder={
                       lang === "en" ? "your@email.com" : "이메일 주소"
+                    }
+                    value={vals.email}
+                    onChange={(e) =>
+                      setVals({ ...vals, email: e.target.value })
                     }
                     required
                     style={inp}
@@ -325,6 +331,8 @@ export default function Contact() {
                         ? "How can we help you?"
                         : "메시지를 입력하세요"
                     }
+                    value={vals.msg}
+                    onChange={(e) => setVals({ ...vals, msg: e.target.value })}
                     required
                     rows={5}
                     style={{ ...inp, resize: "vertical" }}
