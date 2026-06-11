@@ -10,7 +10,7 @@ export const text = {
     galleryTab1: "Main Sermon",
     galleryTab2: "Elementary Class",
     galleryDesc1:
-      "In the Main Sanctuary, the Adult sermon will be preached in Korean and in English side by side translation.",
+      "In the Main Sanctuary, the adult sermon will be preached in English.",
     galleryDesc2:
       "In the Small Sanctuary and the Elementary room, Children Bible Seminar and activities will be happening.",
     galleryYoutube: "Watch on YouTube",
@@ -20,39 +20,39 @@ export const text = {
     mapBtn: "Open in Google Maps",
 
     teachTitle: "What We Teach",
-    teachSubtitle: "A 6-Day Bible Seminar Contents",
+    teachSubtitle: "A 6-Day Bible Seminar",
     teachIntro:
-      "The Bible Seminar is a life-changing six-day journey through Scripture. Each sermon is designed to help your understanding of the Bible and its relevance to your life today. No prior knowledge required.",
+      "God who created the heavens and the earth, God who governs and guides the course of human history, God who loves us, God who firmly establishes justice and judges this world in righteousness and holiness. \n Through the six-day Bible Seminar, you can meet the living God.",
     days: [
       {
         day: "Day 1",
         title: "The Reason Why We Must Learn the Bible",
-        desc: "Discover why the Bible is affects every person and how it speaks directly to the deepest questions of life.",
+        desc: "Why do I need the Bible? What does the Bible say about life and death?",
       },
       {
         day: "Day 2",
-        title: "Scientific Evidences in the Bible",
-        desc: "Explore the remarkable scientific insights found in Scripture — written thousands of years before modern discovery.",
+        title: "Scientific Evidence in the Bible",
+        desc: "Through the remarkable scientific evidence recorded in the Bible, we can understand what God wants to tell us through Scripture. \n The Garden of Eden, Noah's Flood, and the Tower of Babel are not myths or legends, but facts.",
       },
       {
         day: "Day 3",
         title: "Israel, the Witness of God",
-        desc: "Trace the history of Israel as a living testimony to the power and sovereignty of God throughout the ages.",
+        desc: "The history and restoration of Israel — clear evidence that God is alive.",
       },
       {
         day: "Day 4",
-        title: "The Signs in the End Times",
-        desc: "Examine what the Bible says about the end of the age and what signs are already unfolding in our world today.",
+        title: "The Signs of the End Times",
+        desc: "The last days the Bible foretells, and the signs already appearing in the world we live in today. The natural disasters, wars, and diseases happening in our lives right now — all of these are signs of the last days the Bible speaks of.",
       },
       {
         day: "Day 5",
         title: "Sin of Man",
-        desc: "Understand the nature of sin and its consequences — and how it affects every human being across all generations.",
+        desc: "Through Scripture we can understand the nature of sin, its consequences, and how it ultimately affects me. \n Is man truly good, or evil? What does the Bible say about humanity? And what is the end of me, a sinner?",
       },
       {
         day: "Day 6",
         title: "Eternal Salvation",
-        desc: "Learn God's plan for salvation and hope of eternal life freely offered to all who believe. God made a way of salvation by sending His begotten Son to die for our sins.",
+        desc: "Through the Bible we can learn how our sins can be resolved. \"God desires all people to be saved and to come to the knowledge of the truth.\" [1 Timothy 2:4]",
       },
     ],
 
@@ -77,8 +77,7 @@ export const text = {
     galleryTitle: "성경강연회 갤러리",
     galleryTab1: "대강당",
     galleryTab2: "초등부",
-    galleryDesc1:
-      "대강당에서는 성인 말씀이 한국어와 영어 순차 통역으로 전해집니다.",
+    galleryDesc1: "대강당에서는 성인 말씀이 영어로 전해집니다.",
     galleryDesc2:
       "소강당과 초등부실에서는 아이들을 위한 성경강연회와 액티비티가 함께 진행됩니다.",
     galleryYoutube: "유튜브에서 보기",

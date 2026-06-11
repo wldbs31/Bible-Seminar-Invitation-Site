@@ -21,6 +21,28 @@ export default function Hero() {
         overflow: "hidden",
       }}
     >
+      {/* Church photo — subtle background overlay, sits high and fades out
+          toward the bottom so it doesn't cut sharply behind the video */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: "70%",
+          pointerEvents: "none",
+          backgroundImage: `url(${import.meta.env.BASE_URL}church-hero.jpg)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+          opacity: 0.14,
+          mixBlendMode: "luminosity",
+          maskImage:
+            "linear-gradient(to bottom, #000 0%, #000 45%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, #000 0%, #000 45%, transparent 100%)",
+        }}
+      />
+
       {/* Decorative grid */}
       <div
         style={{
@@ -146,7 +168,7 @@ export default function Hero() {
               lineHeight: 1,
             }}
           >
-            03.10 – 03.15.2026,
+            07.13 – 07.18.2026,
           </p>
           <p
             style={{
@@ -258,7 +280,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="https://www.youtube.com/@jbchsva"
+            href="https://www.youtube.com/@JBCHSVAOFFICIAL/featured"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -313,7 +335,7 @@ export default function Hero() {
             }}
           >
             <iframe
-              src="https://www.youtube.com/embed/533-II9cXVA?rel=0"
+              src="https://www.youtube.com/embed/naZi9sqGNqs?rel=0"
               title="Bible Seminar Preview"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

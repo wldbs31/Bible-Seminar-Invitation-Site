@@ -117,8 +117,8 @@ export default function Contact() {
               {
                 icon: "▶",
                 label: "YouTube",
-                value: "@jbchsva",
-                href: "https://www.youtube.com/@jbchsva",
+                value: "@JBCHSVAOFFICIAL",
+                href: "https://www.youtube.com/@JBCHSVAOFFICIAL/featured",
               },
             ].map(({ icon, label, value, href }) => (
               <div

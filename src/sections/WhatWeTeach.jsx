@@ -266,7 +266,7 @@ export default function WhatWeTeach() {
             </p>
           </div>
           <a
-            href="https://www.youtube.com/@jbchsva"
+            href="https://www.youtube.com/@JBCHSVAOFFICIAL/featured"
             target="_blank"
             rel="noopener noreferrer"
             style={{

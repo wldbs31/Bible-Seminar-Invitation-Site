@@ -141,7 +141,7 @@ export default function MapSection() {
             </div>
 
             <a
-              href="https://maps.google.com/?q=13246+Warwick+Blvd,+Newport+News,+VA+23602"
+              href="https://www.google.com/maps/search/?api=1&query=13246%20Warwick%20Blvd%2C%20Newport%20News%2C%20VA%2023602"
               target="_blank"
               rel="noopener noreferrer"
               style={{
