@@ -1,9 +1,22 @@
 import { useLang } from "../context/LangContext";
 import { text } from "../content";
 
+// First day of the Bible Seminar (July 13, 2026). Month is 0-indexed.
+const SEMINAR_START = new Date(2026, 6, 13);
+const SEMINAR_END = new Date(2026, 6, 18);
+
+// Whole days from today until the seminar starts. Recomputed on every render,
+// so the number ticks down by one each calendar day.
+function daysUntilSeminar() {
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  return Math.round((SEMINAR_START - today) / 86400000);
+}
+
 export default function Hero() {
   const { lang } = useLang();
   const t = text[lang];
+  const dDay = daysUntilSeminar();
 
   return (
     <section
@@ -232,11 +245,51 @@ export default function Hero() {
             color: "rgba(200,220,255,0.8)",
             lineHeight: 1.75,
             maxWidth: "520px",
-            margin: "0 auto 40px",
+            margin: "0 auto 18px",
           }}
         >
           {t.heroIntro}
         </p>
+
+        {/* Countdown to the seminar — recomputed daily */}
+        {dDay >= -5 && (
+          <div style={{ marginBottom: "40px", color: "#dce8ff" }}>
+            <div
+              style={{
+                fontFamily: "'DIN Pro', 'Barlow', 'Arial Narrow', sans-serif",
+                fontWeight: 500,
+                fontSize: "4.6rem",
+                lineHeight: 1,
+                letterSpacing: "0.02em",
+                textShadow: "0 0 28px rgba(168,200,248,0.55)",
+              }}
+            >
+              {dDay > 0 ? `D-${dDay}` : "D-DAY"}
+            </div>
+            <div
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "0.95rem",
+                fontWeight: 600,
+                letterSpacing: "0.08em",
+                marginTop: "10px",
+                textShadow: "0 0 16px rgba(168,200,248,0.35)",
+              }}
+            >
+              {dDay > 0
+                ? lang === "en"
+                  ? "Until the Bible Seminar"
+                  : "성경강연회까지"
+                : dDay === 0
+                  ? lang === "en"
+                    ? "The Bible Seminar begins today"
+                    : "성경강연회가 오늘 시작됩니다"
+                  : lang === "en"
+                    ? "The Bible Seminar is happening now"
+                    : "성경강연회가 진행 중입니다"}
+            </div>
+          </div>
+        )}
 
         {/* CTA buttons */}
         <div
