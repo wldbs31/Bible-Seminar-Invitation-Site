@@ -303,6 +303,12 @@ export default function Hero() {
         >
           <a
             href="#teach"
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .getElementById("teach")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
             style={{
               display: "inline-flex",
               alignItems: "center",

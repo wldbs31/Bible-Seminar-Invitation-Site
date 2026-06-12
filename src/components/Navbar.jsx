@@ -13,6 +13,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // The app uses HashRouter, so a plain href="#teach" would change the route
+  // hash and bounce back to the envelope page. Instead, scroll to the section
+  // manually without touching the router hash.
+  const scrollTo = (e, href) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   const links =
     lang === "en"
       ? [
@@ -50,6 +60,7 @@ export default function Navbar() {
       {/* Logo */}
       <a
         href="#hero"
+        onClick={(e) => scrollTo(e, "#hero")}
         style={{
           color: scrolled ? "var(--navy)" : "#fff",
           textDecoration: "none",
@@ -66,9 +77,10 @@ export default function Navbar() {
           alt="SVBC Logo"
           style={{ height: "36px", width: "auto" }}
         />
-        {lang === "en"
-          ? "SOUTHERN VIRGINIA BAPTIST CHURCH"
-          : "SOUTHERN VIRGINIA BAPTIST CHURCH"}
+        <span className="nav-brand">
+          <span style={{ whiteSpace: "nowrap" }}>SOUTHERN VIRGINIA</span>{" "}
+          <span style={{ whiteSpace: "nowrap" }}>BAPTIST CHURCH</span>
+        </span>
       </a>
 
       {/* Desktop links */}
@@ -80,6 +92,7 @@ export default function Navbar() {
           <a
             key={l.href}
             href={l.href}
+            onClick={(e) => scrollTo(e, l.href)}
             style={{
               color: scrolled ? "var(--text-soft)" : "rgba(255,255,255,0.85)",
               textDecoration: "none",
@@ -159,7 +172,7 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              onClick={() => setMenuOpen(false)}
+              onClick={(e) => scrollTo(e, l.href)}
               style={{
                 color: "var(--text-soft)",
                 textDecoration: "none",
@@ -197,6 +210,15 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .nav-desktop { display: none !important; }
           .nav-hamburger { display: block !important; }
+          .nav-brand {
+            font-size: 0.92rem;
+            line-height: 1.05;
+            max-width: 200px;
+            display: inline-block;
+          }
+        }
+        @media (max-width: 380px) {
+          .nav-brand { font-size: 0.8rem; max-width: 160px; }
         }
       `}</style>
     </nav>

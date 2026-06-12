@@ -132,7 +132,7 @@ export default function Gallery() {
         {/* Photo grid */}
         <div
           ref={ref}
-          className="reveal"
+          className="reveal gallery-grid"
           style={{
             display: "grid",
             gridTemplateColumns:
@@ -185,8 +185,7 @@ export default function Gallery() {
 
       <style>{`
         @media(max-width:640px){
-          #gallery [style*="gridTemplateColumns: repeat(3"]{grid-template-columns:repeat(2,1fr)!important;}
-          #gallery [style*="gridTemplateColumns: repeat(2"]{grid-template-columns:1fr!important;}
+          .gallery-grid{ grid-template-columns:1fr !important; }
         }
       `}</style>
     </section>

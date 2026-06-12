@@ -75,6 +75,7 @@ export default function WhatWeTeach() {
         <div style={{ position: "relative" }}>
           {/* Vertical line */}
           <div
+            className="tl-line"
             style={{
               position: "absolute",
               left: "50%",
@@ -91,6 +92,7 @@ export default function WhatWeTeach() {
             return (
               <div
                 key={i}
+                className="tl-row"
                 style={{
                   display: "flex",
                   flexDirection: isLeft ? "row" : "row-reverse",
@@ -102,6 +104,7 @@ export default function WhatWeTeach() {
               >
                 {/* Card half */}
                 <div
+                  className="tl-card"
                   style={{
                     width: "calc(50% - 28px)",
                     padding: isLeft ? "0 32px 0 0" : "0 0 0 32px",
@@ -203,6 +206,7 @@ export default function WhatWeTeach() {
 
                 {/* Center dot */}
                 <div
+                  className="tl-dot"
                   style={{
                     position: "absolute",
                     left: "50%",
@@ -219,7 +223,7 @@ export default function WhatWeTeach() {
                 />
 
                 {/* Empty half */}
-                <div style={{ width: "calc(50% - 28px)" }} />
+                <div className="tl-empty" style={{ width: "calc(50% - 28px)" }} />
               </div>
             );
           })}
@@ -303,16 +307,15 @@ export default function WhatWeTeach() {
 
       <style>{`
         @media(max-width:700px){
-          #teach > div > div > div[style*="display:flex"] {
-            flex-direction: column !important;
-          }
-          #teach > div > div > div > div:first-child {
+          /* Move the timeline to a single left-aligned rail */
+          .tl-line { left: 13px !important; transform: none !important; }
+          .tl-row { flex-direction: row !important; }
+          .tl-card {
             width: 100% !important;
-            padding: 0 !important;
+            padding: 0 0 0 44px !important;
           }
-          #teach > div > div > div > div:last-child { display:none; }
-          #teach [style*="left:50%"][style*="width:14px"] { left: 12px !important; }
-          #teach [style*="left:calc(50%"] { display:none; }
+          .tl-dot { left: 13px !important; top: 24px !important; }
+          .tl-empty { display: none !important; }
         }
       `}</style>
     </section>
