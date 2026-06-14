@@ -9,7 +9,10 @@ export default function Gallery() {
   const [tab, setTab] = useState("main");
   const ref = useReveal();
 
-  const mainPhotos = [1, 2, 3, 4, 5, 6];
+  // Main has more photos than exist on disk on purpose — tiles whose image
+  // is missing hide themselves (see onError), so new main-N.jpg files appear
+  // automatically as they're added.
+  const mainPhotos = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const elemPhotos = [1, 2, 3, 4];
   const photos = tab === "main" ? mainPhotos : elemPhotos;
 
@@ -175,7 +178,10 @@ export default function Gallery() {
                   zIndex: 2,
                 }}
                 onError={(e) => {
-                  e.target.style.display = "none";
+                  // Hide the whole tile when its photo doesn't exist, so
+                  // padded-but-empty main-N slots leave no blank placeholder.
+                  const tile = e.target.parentElement;
+                  if (tile) tile.style.display = "none";
                 }}
               />
             </div>
